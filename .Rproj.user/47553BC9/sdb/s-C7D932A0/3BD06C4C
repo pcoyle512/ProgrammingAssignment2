@@ -1,0 +1,17 @@
+{
+    "contents" : "makeCacheMatrix<-function (x = matrix()){\n  inv<-NULL\n  set<-function(y){\n    x<<-y\n    inv<<-NULL\n  }\n  get<-function()x\n  setinversematrix<-function(solved) inv<<-solved\n  getinversematrix<-function() inv\n  list(set=set, get=get, setinversematrix=setinversematrix, getinversematrix=getinversematrix)\n}\n\ncacheSolve<-function(x, ...){\n  inv<-x$getinversematrix()\n  if(!is.null(inv)){\n      message(\"getting cached data - inverse matrix\")\n      return(inv)\n  }\n  data<-x$get()\n  inv<-solve(data,...)\n  x$setinversematrix(inv)\n  inv\n}",
+    "created" : 1440179430796.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3986923083",
+    "id" : "3BD06C4C",
+    "lastKnownWriteTime" : 1440176799,
+    "path" : "~/cache_inverse.r",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
